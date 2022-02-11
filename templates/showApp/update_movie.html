@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Update Movie</title>
+  </head>
+  <body>
+    <h3>Update Movie details</h3>
+    <form method="post">
+      <table border="1">
+          {{ form.as_table}}
+      </table>
+      {% csrf_token %}
+      <br/>
+      <input type="submit" name="" value="update">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Movies list</title>
+  </head>
+  <body>
+    <h3>All Movies</h3>
+    <h2>Welcome to Cine Space</h2>
+    {% if movies %}
+    <table border="2">
+      <thead>
+        <th>Movie Name</th>
+        <th>Director</th>
+        <th>Hero</th>
+        <th>Herohin</th>
+        <th>Language</th>
+        <th>Release Date</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th>Book ticket</th>
+      </thead>
+      {% for movie in movies %}
+      <tr>
+        <td>{{movie.movie_name}}</td>
+        <td>{{movie.director}}</td>
+        <td>{{movie.hero}}</td>
+        <td>{{movie.herohin}}</td>
+        <td>{{movie.language}}</td>
+        <td>{{movie.released_date}}</td>
+        <td><a href="/updateMovie/{{movie.id}}">update</a></td>
+        <td><a href="/deleteMovie/{{movie.id}}">delete</a></td>
+        <td><a href="/bookTicket/{{movie.id}}">BookTicket</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <h3><a href="/addMovie">Add Movie</a></h3>
+  </body>
+</html>

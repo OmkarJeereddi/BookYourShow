@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Book Ticket</title>
+  </head>
+  <body>
+    <h3>Movie Details</h3>
+      <table border="2">
+        <thead>
+          <th>Movie Name</th>
+          <th>Director</th>
+          <th>Hero</th>
+          <th>Herohin</th>
+        </thead>
+        <tr>
+          <td>{{movie.movie_name}}</td>
+          <td>{{movie.director}}</td>
+          <td>{{movie.hero}}</td>
+          <td>{{movie.herohin}}</td>
+        </tr>
+      </table>
+      <br/>
+      <h3>Enter your details!</h3>
+      <form  method="post">
+        {% csrf_token %}
+        <table border="1">
+            {{ form.as_table}}
+        </table>
+        <br/>
+        <input type="button" onclick="location.href='http://localhost:8000/ticketDetails';" value="Ticket" />
+      </form>
+  </body>
+</html>
